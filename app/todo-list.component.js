@@ -30,11 +30,7 @@ System.register(['angular2/core', "./todo-service", "./todo-item-renderer"], fun
                     core_1.Component({
                         selector: 'todo-list',
                         directives: [todo_item_renderer_1.TodoItemRenderer],
-                        template: '<ul>' +
-                            '<li *ngFor="#todo of todoService.todos ">' +
-                            '<todo-item-renderer></todo-item-renderer>' +
-                            '</li>' +
-                            '</ul>'
+                        template: "<ul>\n                <li *ngFor=\"#todo of todoService.todos \">\n                    <todo-item-renderer [todo]=\"todo\"></todo-item-renderer>\n                </li>\n             </ul>"
                     }), 
                     __metadata('design:paramtypes', [todo_service_1.TodoService])
                 ], TodoList);

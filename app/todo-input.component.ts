@@ -3,11 +3,12 @@ import {TodoService} from './todo-service'
 
 @Component({
     selector:'todo-input',
-    template:'<div>' +
-    '<input type="text" [(ngModel)]="todoInput">' +
-    '<button (click)="onSubmit()">Submit</button>' +
-     '{{todoInput}}'+
-    '</div>'
+    template:`
+            <div>
+                <input type="text" [(ngModel)]="todoInput">
+                <button (click)="onSubmit()">Submit</button>
+                {{todoInput}}
+            </div>`
 })
 
 export class TodoInput{

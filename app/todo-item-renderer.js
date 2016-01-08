@@ -19,10 +19,14 @@ System.register(['angular2/core'], function(exports_1) {
             TodoItemRenderer = (function () {
                 function TodoItemRenderer() {
                 }
+                __decorate([
+                    core_1.Input(), 
+                    __metadata('design:type', Object)
+                ], TodoItemRenderer.prototype, "todo", void 0);
                 TodoItemRenderer = __decorate([
                     core_1.Component({
                         selector: 'todo-item-renderer',
-                        template: 'WORK IN PROGRESS'
+                        template: "\n                <style>\n                    .completed{\n                        text-decoration: line-through;\n                    }\n\n                </style>\n\n\n              <div>\n                <span [ngClass]=\"todo.status\">{{todo.title}}</span>\n                <button (click)=\"todo.toggle()\">Toggle</button>\n              </div>  "
                     }), 
                     __metadata('design:paramtypes', [])
                 ], TodoItemRenderer);

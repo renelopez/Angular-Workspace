@@ -29,9 +29,7 @@ System.register(['angular2/core', './todo-input.component', './todo-list.compone
                     core_1.Component({
                         selector: 'my-app',
                         directives: [todo_input_component_1.TodoInput, todo_list_component_1.TodoList],
-                        template: '<h1>Todo List</h1>' +
-                            '<todo-input></todo-input>' +
-                            '<todo-list></todo-list>'
+                        template: "\n              <h1>Todo List</h1>\n              <todo-input></todo-input>\n              <todo-list></todo-list>"
                     }), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);
