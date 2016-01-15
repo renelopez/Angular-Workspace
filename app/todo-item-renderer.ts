@@ -9,8 +9,6 @@ import {Component,Input} from 'angular2/core'
                     }
 
                 </style>
-
-
               <div>
                 <span [ngClass]="todo.status">{{todo.title}}</span>
                 <button (click)="todo.toggle()">Toggle</button>
