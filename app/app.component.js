@@ -1,4 +1,5 @@
 System.register(['angular2/core', './todo-input.component', './todo-list.component'], function(exports_1) {
+    "use strict";
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -29,12 +30,12 @@ System.register(['angular2/core', './todo-input.component', './todo-list.compone
                     core_1.Component({
                         selector: 'my-app',
                         directives: [todo_input_component_1.TodoInput, todo_list_component_1.TodoList],
-                        template: "\n              <h1>Todo List</h1>\n              <todo-input></todo-input>\n              <todo-list></todo-list>"
+                        template: "\n              <h1>Todo List</h1>\n              <todo-input></todo-input>\n              <todo-list [status]=\"completed\"></todo-list>"
                     }), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);
                 return AppComponent;
-            })();
+            }());
             exports_1("AppComponent", AppComponent);
         }
     }

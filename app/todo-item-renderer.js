@@ -1,4 +1,5 @@
 System.register(['angular2/core'], function(exports_1) {
+    "use strict";
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,20 +19,25 @@ System.register(['angular2/core'], function(exports_1) {
         execute: function() {
             TodoItemRenderer = (function () {
                 function TodoItemRenderer() {
+                    this.toggle = new core_1.EventEmitter();
                 }
                 __decorate([
                     core_1.Input(), 
                     __metadata('design:type', Object)
                 ], TodoItemRenderer.prototype, "todo", void 0);
+                __decorate([
+                    core_1.Output(), 
+                    __metadata('design:type', Object)
+                ], TodoItemRenderer.prototype, "toggle", void 0);
                 TodoItemRenderer = __decorate([
                     core_1.Component({
                         selector: 'todo-item-renderer',
-                        template: "\n                <style>\n                    .completed{\n                        text-decoration: line-through;\n                    }\n\n                </style>\n              <div>\n                <span [ngClass]=\"todo.status\">{{todo.title}}</span>\n                <button (click)=\"todo.toggle()\">Toggle</button>\n              </div>  "
+                        template: "\n              <div>\n                <span [ngClass]=\"todo.status\">{{todo.title}}</span>\n                <button (click)=\"toggle.emit(todo)\">Toggle</button>\n              </div>  "
                     }), 
                     __metadata('design:paramtypes', [])
                 ], TodoItemRenderer);
                 return TodoItemRenderer;
-            })();
+            }());
             exports_1("TodoItemRenderer", TodoItemRenderer);
         }
     }

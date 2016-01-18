@@ -1,4 +1,5 @@
-System.register(['angular2/core', './todo-service'], function(exports_1) {
+System.register(['angular2/core', './todo-service', './todo-model'], function(exports_1) {
+    "use strict";
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,7 +9,7 @@ System.register(['angular2/core', './todo-service'], function(exports_1) {
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, todo_service_1;
+    var core_1, todo_service_1, todo_model_1;
     var TodoInput;
     return {
         setters:[
@@ -17,25 +18,30 @@ System.register(['angular2/core', './todo-service'], function(exports_1) {
             },
             function (todo_service_1_1) {
                 todo_service_1 = todo_service_1_1;
+            },
+            function (todo_model_1_1) {
+                todo_model_1 = todo_model_1_1;
             }],
         execute: function() {
             TodoInput = (function () {
                 function TodoInput(todoService) {
                     this.todoService = todoService;
+                    this.todoModel = new todo_model_1.TodoModel();
                 }
                 TodoInput.prototype.onSubmit = function () {
-                    this.todoService.todos.push(this.todoInput);
+                    this.todoService.addTodo(this.todoModel);
                     console.log(this.todoService.todos);
+                    this.todoModel = new todo_model_1.TodoModel();
                 };
                 TodoInput = __decorate([
                     core_1.Component({
                         selector: 'todo-input',
-                        template: "\n            <div>\n                <input type=\"text\" [(ngModel)]=\"todoInput\">\n                <button (click)=\"onSubmit()\">Submit</button>\n                {{todoInput}}\n            </div>"
+                        template: "<div>\n                <form (submit)=\"onSubmit()\">\n                    <input type=\"text\" [(ngModel)]=\"todoModel.title\">\n                </form>\n              </div>"
                     }), 
                     __metadata('design:paramtypes', [todo_service_1.TodoService])
                 ], TodoInput);
                 return TodoInput;
-            })();
+            }());
             exports_1("TodoInput", TodoInput);
         }
     }

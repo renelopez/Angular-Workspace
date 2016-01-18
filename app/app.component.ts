@@ -1,4 +1,4 @@
-import {Component} from 'angular2/core';
+import {Component,Input} from 'angular2/core';
 import {TodoInput} from './todo-input.component';
 import {TodoList} from './todo-list.component';
 
@@ -8,7 +8,9 @@ import {TodoList} from './todo-list.component';
     template:`
               <h1>Todo List</h1>
               <todo-input></todo-input>
-              <todo-list></todo-list>`
+              <todo-list [status]="completed"></todo-list>`
 })
 
-export class AppComponent{}
+export class AppComponent{
+
+}

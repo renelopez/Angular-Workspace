@@ -1,7 +1,6 @@
 export class TodoModel {
-    status:string;
 
-    constructor(public title:string = '') {
+    constructor(public title:string = '',public status='started') {
     }
 
     toggle() {

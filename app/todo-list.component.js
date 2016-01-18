@@ -1,4 +1,5 @@
-System.register(['angular2/core', "./todo-service", "./todo-item-renderer", "./search-pipe"], function(exports_1) {
+System.register(['angular2/core', "./todo-service", "./todo-item-renderer", "./started-pipe"], function(exports_1) {
+    "use strict";
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,7 +9,7 @@ System.register(['angular2/core', "./todo-service", "./todo-item-renderer", "./s
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, todo_service_1, todo_item_renderer_1, search_pipe_1;
+    var core_1, todo_service_1, todo_item_renderer_1, started_pipe_1;
     var TodoList;
     return {
         setters:[
@@ -21,25 +22,29 @@ System.register(['angular2/core', "./todo-service", "./todo-item-renderer", "./s
             function (todo_item_renderer_1_1) {
                 todo_item_renderer_1 = todo_item_renderer_1_1;
             },
-            function (search_pipe_1_1) {
-                search_pipe_1 = search_pipe_1_1;
+            function (started_pipe_1_1) {
+                started_pipe_1 = started_pipe_1_1;
             }],
         execute: function() {
             TodoList = (function () {
                 function TodoList(todoService) {
                     this.todoService = todoService;
                 }
+                __decorate([
+                    core_1.Input, 
+                    __metadata('design:type', Object)
+                ], TodoList.prototype, "status", void 0);
                 TodoList = __decorate([
                     core_1.Component({
                         selector: 'todo-list',
                         directives: [todo_item_renderer_1.TodoItemRenderer],
-                        pipes: [search_pipe_1.SearchPipe],
-                        template: "<ul>\n                <li *ngFor=\"#todo of todoService.todos | search \">\n                    <todo-item-renderer [todo]=\"todo\"></todo-item-renderer>\n                </li>\n             </ul>"
+                        pipes: [started_pipe_1.StartedPipe],
+                        template: "<ul>\n                <li *ngFor=\"#todo of todoService.todos | started:status\">\n                    <todo-item-renderer\n                    (toggle)=\"todoService.toggleTodo($event)\"\n                    [todo]=\"todo\"></todo-item-renderer>\n                </li>\n             </ul>"
                     }), 
                     __metadata('design:paramtypes', [todo_service_1.TodoService])
                 ], TodoList);
                 return TodoList;
-            })();
+            }());
             exports_1("TodoList", TodoList);
         }
     }

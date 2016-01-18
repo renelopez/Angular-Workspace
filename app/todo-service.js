@@ -1,4 +1,5 @@
 System.register(['angular2/core', "./todo-model"], function(exports_1) {
+    "use strict";
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -27,12 +28,23 @@ System.register(['angular2/core', "./todo-model"], function(exports_1) {
                         new todo_model_1.TodoModel('sleep'),
                     ];
                 }
+                TodoService.prototype.addTodo = function (todo) {
+                    this.todos = this.todos.concat([todo]);
+                };
+                TodoService.prototype.toggleTodo = function (todo) {
+                    console.log(todo);
+                    todo.toggle();
+                    var todoIndex = this.todos.indexOf(todo);
+                    this.todos = this.todos.slice(0, todoIndex).concat([
+                        todo
+                    ], this.todos.slice(todoIndex + 1));
+                };
                 TodoService = __decorate([
                     core_1.Injectable(), 
                     __metadata('design:paramtypes', [])
                 ], TodoService);
                 return TodoService;
-            })();
+            }());
             exports_1("TodoService", TodoService);
         }
     }
