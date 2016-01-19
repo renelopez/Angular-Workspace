@@ -18,7 +18,7 @@ import {StartedPipe} from "./started-pipe";
 })
 
 export class TodoList{
-  @Input status;
+  @Input() status;
   constructor(public todoService:TodoService){
 
   }

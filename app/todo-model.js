@@ -1,5 +1,4 @@
 System.register([], function(exports_1) {
-    "use strict";
     var TodoModel;
     return {
         setters:[],
@@ -18,7 +17,7 @@ System.register([], function(exports_1) {
                             : 'started';
                 };
                 return TodoModel;
-            }());
+            })();
             exports_1("TodoModel", TodoModel);
         }
     }
