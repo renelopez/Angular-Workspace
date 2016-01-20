@@ -1,4 +1,4 @@
-System.register(['angular2/core', './todo-input.component', './todo-list.component', './todo-status-selector.component'], function(exports_1) {
+System.register(['angular2/core', './todo-input.component', './todo-list.component', './todo-status-selector.component', './todo-search-selector.component'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,7 +8,7 @@ System.register(['angular2/core', './todo-input.component', './todo-list.compone
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, todo_input_component_1, todo_list_component_1, todo_status_selector_component_1;
+    var core_1, todo_input_component_1, todo_list_component_1, todo_status_selector_component_1, todo_search_selector_component_1;
     var AppComponent;
     return {
         setters:[
@@ -23,6 +23,9 @@ System.register(['angular2/core', './todo-input.component', './todo-list.compone
             },
             function (todo_status_selector_component_1_1) {
                 todo_status_selector_component_1 = todo_status_selector_component_1_1;
+            },
+            function (todo_search_selector_component_1_1) {
+                todo_search_selector_component_1 = todo_search_selector_component_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
@@ -31,8 +34,8 @@ System.register(['angular2/core', './todo-input.component', './todo-list.compone
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        directives: [todo_input_component_1.TodoInput, todo_list_component_1.TodoList, todo_status_selector_component_1.TodoStatusSelector],
-                        template: "\n              <h1>Todo List</h1>\n              <todo-input></todo-input>\n              <todo-status-selector (select)=\"status = $event\"></todo-status-selector>\n              <todo-list [status]=\"status\"></todo-list>"
+                        directives: [todo_input_component_1.TodoInput, todo_list_component_1.TodoList, todo_status_selector_component_1.TodoStatusSelector, todo_search_selector_component_1.TodoSearchSelector],
+                        template: "\n              <h1>Todo List</h1>\n              <todo-search-selector (update)=\"term = $event\"></todo-search-selector>\n              <todo-input></todo-input>\n              <todo-status-selector (select)=\"status = $event\"></todo-status-selector>\n              <todo-list [status]=\"status\" [term]=\"term\"></todo-list>"
                     }), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);

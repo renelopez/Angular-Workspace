@@ -25,6 +25,14 @@ System.register(['angular2/core', "./todo-model"], function(exports_1) {
                         new todo_model_1.TodoModel('eat'),
                         new todo_model_1.TodoModel('code'),
                         new todo_model_1.TodoModel('sleep'),
+                        new todo_model_1.TodoModel('talk'),
+                        new todo_model_1.TodoModel('drink'),
+                        new todo_model_1.TodoModel('chat'),
+                        new todo_model_1.TodoModel('browse'),
+                        new todo_model_1.TodoModel('play'),
+                        new todo_model_1.TodoModel('listen music'),
+                        new todo_model_1.TodoModel('read'),
+                        new todo_model_1.TodoModel('practice'),
                     ];
                 }
                 TodoService.prototype.addTodo = function (todo) {

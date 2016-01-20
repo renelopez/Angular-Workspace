@@ -12,7 +12,7 @@ export class TodoStatusSelector{
     @Output() select =new EventEmitter();
     statuses=['started','completed'];
 
-    ngInit(){
+    ngOnInit(){
         this.select.emit(this.statuses[0]);
     }
 }

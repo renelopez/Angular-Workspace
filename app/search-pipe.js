@@ -19,8 +19,9 @@ System.register(['angular2/core'], function(exports_1) {
             SearchPipe = (function () {
                 function SearchPipe() {
                 }
-                SearchPipe.prototype.transform = function (value) {
-                    return value.filter(function (item) { return item.title.startsWith('s'); });
+                SearchPipe.prototype.transform = function (value, _a) {
+                    var term = _a[0];
+                    return value.filter(function (item) { return item.title.startsWith(term); });
                 };
                 SearchPipe = __decorate([
                     core_1.Pipe({
